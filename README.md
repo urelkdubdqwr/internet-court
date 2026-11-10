@@ -1,5 +1,10 @@
 # Internet Court — Adjudicated Paywall (GenLayer × x402)
 
+<img src="assets/header.svg" alt="Internet Court" width="100%">
+
+**Pay over x402. Got scammed? GenLayer’s LLM validators rule the dispute on-chain.**
+
+
 An open settlement layer for **agent-to-agent commerce**: an agent pays another agent over
 [x402](https://x402.org) and, when the delivery violates the published spec, the dispute is decided
 **on-chain by GenLayer's LLM validators** instead of a private backend. The verdict is written back as
@@ -19,6 +24,10 @@ enforcement rail — no escrow, no custodian, no support ticket:
    delivery and must agree on the verdict + quality bucket. Result: `RELEASE` / `PARTIAL_REFUND` / `REFUND`.
 5. The verdict updates an on-chain reputation scoreboard. Anyone can wire it into a refund rail.
 
+## How it works
+
+![Internet Court architecture](assets/ecosystem.png)
+
 ## Live deployments
 
 | Piece | Where |
@@ -30,6 +39,11 @@ On-chain proof from the last run (explorer shows `GENVM RESULT` + `CONSENSUS RES
 
 - `open_case` `0x3073e759…d50f1edf` · `adjudicate` `0x3183bf36…c7255ee2` → verdict **REFUND**, bucket `violates`
 - seller reputation after the ruling: `deals 1 · refunds 1 · score 0 · unpaid_atto 100000000000000`
+
+## Demo video
+
+`internet_court_demo.mp4` (in this repo under `assets/`, 56 s) walks both legs end to end -
+honest settlement, then a caught cheating seller - with the real on-chain verdict and reputation.
 
 ## Run it
 

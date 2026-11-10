@@ -1,0 +1,18 @@
+flowchart LR
+    B["Buyer agent"]
+    S["Seller agent<br/>GET /spec"]
+    X["x402 paywall<br/>HTTP 402 + EIP-3009"]
+    T["mUSDC settlement<br/>Base Sepolia"]
+    A["Adjudicator contract<br/>GenLayer studionet"]
+    V["LLM validators<br/>consensus verdict"]
+    R["Reputation registry<br/>next buyer reads it first"]
+
+    B -->|"1. GET /spec"| S
+    S -->|"2. 402"| X
+    B -->|"3. sign"| X
+    X -->|"4. settle"| T
+    T -->|"5. 200 + artifact"| B
+    B -->|"6. spec violation"| A
+    A -->|"7. re-read"| V
+    V -->|"8. verdict"| A
+    A -->|"9. write"| R
