@@ -1,0 +1,17 @@
+{
+ "network": "base-sepolia",
+ "chainId": 84532,
+ "rpc": "https://sepolia.base.org",
+ "token": {
+  "name": "IC Demo USDC (Base Sepolia)",
+  "symbol": "mUSDC",
+  "address": "0x0e6eE7BE16204641c358d8E104b7066f6A5C4b50",
+  "decimals": 6,
+  "version": "2"
+ },
+ "deployTx": "0x2a1cfec99d4182fe213c7ec53647cf31a0c55050c0d6f35104b3d0de0df787d6",
+ "deployer": "0xeb27c2E248E17fb4E7F0d9dD7b056FB77c154227",
+ "genlayerContract": "0xA799cCB52eb1345973A1fe39ad312861dd74EFb2",
+ "genlayerNetwork": "studionet",
+ "x402Cap": 1000000
+}

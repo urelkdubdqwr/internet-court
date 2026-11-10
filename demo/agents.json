@@ -1,0 +1,11 @@
+{
+ "note": "generated demo wallets (mnemonic: all-test-words). TURN GARBAGE DEMO ASSETS.",
+ "buyer": {
+  "address": "0x1090495C9bC80106a8E42D89E10fd58adbDA409b",
+  "keyFile": "./.keys/buyer.key"
+ },
+ "seller": {
+  "address": "0x1A24e5C53B1438f15B25c819fEe1F894e6D131f2",
+  "keyFile": "./.keys/seller.key"
+ }
+}

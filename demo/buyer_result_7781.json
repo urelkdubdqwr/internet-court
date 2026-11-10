@@ -1,0 +1,23 @@
+{
+  "url": "http://127.0.0.1:7781",
+  "resource": "http://127.0.0.1:7781/api/price-oracle",
+  "buyer": "0x1090495C9bC80106a8E42D89E10fd58adbDA409b",
+  "spec": "Deliver JSON with keys: symbol (string, must be \"ETH/USD\"), price (number, realistic ETH/USD spot between 1200 and 8000), decimals (8), sampled_at (recent ISO timestamp, within 5 minutes of delivery), source (\"internal-oracle\"). No placeholder, stale (1970) or fabricated values. Wrong symbol or wildly out-of-range price is a violation.",
+  "paid": true,
+  "settlement": {
+    "success": true,
+    "txHash": "0xd73b41491132e02692f56fb4b1304f77829da1146dcf3457ed9f0c39ab771e16",
+    "network": "base-sepolia",
+    "payer": "0x1090495C9bC80106a8E42D89E10fd58adbDA409b"
+  },
+  "artifact": {
+    "symbol": "ETH/USD",
+    "price": 3421.75,
+    "decimals": 8,
+    "sampled_at": "2026-11-10T08:33:01.421Z",
+    "source": "internal-oracle",
+    "settlement_tx": "0xd73b41491132e02692f56fb4b1304f77829da1146dcf3457ed9f0c39ab771e16"
+  },
+  "paymentRef": "0xd73b41491132e02692f56fb4b1304f77829da1146dcf3457ed9f0c39ab771e16",
+  "violations": []
+}

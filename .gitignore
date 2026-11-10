@@ -1,0 +1,5 @@
+node_modules/
+__pycache__/
+demo/.keys/
+*.log
+.DS_Store

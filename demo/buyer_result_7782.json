@@ -1,0 +1,45 @@
+{
+  "url": "http://127.0.0.1:7782",
+  "resource": "http://127.0.0.1:7782/api/price-oracle",
+  "buyer": "0x1090495C9bC80106a8E42D89E10fd58adbDA409b",
+  "spec": "Deliver JSON with keys: symbol (string, must be \"ETH/USD\"), price (number, realistic ETH/USD spot between 1200 and 8000), decimals (8), sampled_at (recent ISO timestamp, within 5 minutes of delivery), source (\"internal-oracle\"). No placeholder, stale (1970) or fabricated values. Wrong symbol or wildly out-of-range price is a violation.",
+  "paid": true,
+  "settlement": {
+    "success": true,
+    "txHash": "0xeeecb0f105173842e4c2f045b12b6a9f6a8d1d910e38e463c2fafe2c8962a849",
+    "network": "base-sepolia",
+    "payer": "0x1090495C9bC80106a8E42D89E10fd58adbDA409b"
+  },
+  "artifact": {
+    "symbol": "ETH/JPY",
+    "price": 999999999,
+    "decimals": 0,
+    "sampled_at": "1970-01-01T00:00:00.000Z",
+    "source": "internal-oracle",
+    "note": "legacy cache, oracle migration in progress"
+  },
+  "paymentRef": "0xeeecb0f105173842e4c2f045b12b6a9f6a8d1d910e38e463c2fafe2c8962a849",
+  "violations": [
+    "symbol expected ETH/USD, got ETH/JPY",
+    "price 999999999 out of range [1200, 8000]",
+    "sampled_at is a placeholder epoch"
+  ],
+  "caseId": "demo-1794299585337",
+  "verdict": {
+    "status": "ADJUDICATED",
+    "verdict": "REFUND",
+    "quality_bucket": "violates",
+    "reasoning": "The delivered JSON fails nearly every promised requirement: the symbol is ETH/JPY not ETH/USD, the price 999999999 is far outside the realistic 1200-8000 range, the timestamp is the Unix epoch indicating a placeholder rather than a recent sample, and decimals is 0 instead of 8. Only the source field (\"internal-oracle\") matches, but the core data is fabricated/off-spec, warranting a full refund.",
+    "raw": "{\n  adjudicated_at: '',\n  amount_atto: '100000000000000',\n  buyer: '0x854d8C38E18Fa605f0A141d92c2e1787730FfeB0',\n  case_id: 'demo-1794299585337',\n  delivery_inline: '{\"decimals\": 0, \"note\": \"legacy cache, oracle migration in progress\", \"price\": 999999999, \"sampled_at\": \"1970-01-01T00:00:00.000Z\", \"source\": \"internal-oracle\", \"symbol\": \"ETH/JPY\"}',\n  delivery_url: 'http://127.0.0.1:7782/api/price-oracle',\n  payment_ref: '108068655075345394575139378412458038435374811877932348503038948313293589227593',\n  quality_bucket: 'violates',\n  reasoning: 'The delivered JSON fails nearly every promised requirement: the symbol is ETH/JPY not ETH/USD, the price 999999999 is far outside the realistic 1200-8000 range, the timestamp is the Unix epoch indicating a placeholder rather than a recent sample, and decimals is 0 instead of 8. Only the source field (\"internal-oracle\") matches, but the core data is fabricated/off-spec, warranting a full refund.',\n  seller: '0x1A24e5C53B1438f15B25c819fEe1F894e6D131f2',\n  spec: 'Deliver JSON with keys: symbol (string, must be \"ETH/USD\"), price (number, realistic ETH/USD spot between 1200 and 8000), decimals (8), sampled_at (recent ISO timestamp, within 5 minutes of delivery), source (\"internal-oracle\"). No placeholder, stale (1970) or fabricated values. Wrong symbol or wildly out-of-range price is a violation.',\n  status: 'ADJUDICATED',\n  verdict: 'REFUND'\n}"
+  },
+  "reputation": {
+    "agent": "0x1a24e5c53b1438f15b25c819fee1f894e6d131f2",
+    "score": 0,
+    "deals": 1,
+    "releases": 0,
+    "partials": 0,
+    "refunds": 1,
+    "unpaid_atto": "100000000000000",
+    "raw": "{\n  agent: '0x1a24e5c53b1438f15b25c819fee1f894e6d131f2',\n  deals: 1,\n  partials: 0,\n  refunds: 1,\n  releases: 0,\n  score: 0,\n  unpaid_atto: '100000000000000'\n}"
+  }
+}
