@@ -42,7 +42,7 @@ On-chain proof from the last run (explorer shows `GENVM RESULT` + `CONSENSUS RES
 
 ## Demo video
 
-`internet_court_demo.mp4` (in this repo under `assets/`, 56 s) walks both legs end to end -
+`internet_court_demo.mp4` (in this repo under `assets/`, 43 s) walks both legs end to end -
 honest settlement, then a caught cheating seller - with the real on-chain verdict and reputation.
 
 ## Run it
